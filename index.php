@@ -14,6 +14,14 @@
 </head>
 
 <body>
+
+<script type="text/javascript">
+if(top.location != window.location) {
+    window.location = 'https://www.jparcher.xyz/conch/error_iframe.php';
+}
+</script>
+
+
 	<?php
 	$answer = array(
 		'It is certain',
