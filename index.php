@@ -4,23 +4,20 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Ever had a question that you couldnt answer let the Magic Conch answer for you. Website by Jp Archer">
-	<meta name="author" content="">
+	<meta name="description" content="Ever had a question that you just couldn't answer? Let the Magic Conch answer for you. Go on, ask it!">
 	<link rel="shortcut icon" href="img/favicon.ico">
-	<title>Ask The Magic Conch</title>
+	<title>Got A Question? Ask The Magic Conch</title>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/main.css" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
 </head>
 
 <body>
-
-<script type="text/javascript">
-if(top.location != window.location) {
-    window.location = 'https://www.jparcher.xyz/conch/error_iframe.php';
-}
-</script>
-
+	<script type="text/javascript">
+		if(top.location != window.location) {
+			window.location = 'https://www.jparcher.xyz/conch/error_iframe.php';
+		}
+	</script>
 
 	<?php
 	$answer = array(
@@ -48,86 +45,73 @@ if(top.location != window.location) {
 		'Outlook good',
 		'My sources say no',
 		'Could be',
-		'Very doubtful'
-		);
-
-
-
+		'Very doubtful',
+		'Nah bro',
+		'Hells yeah',
+	);
 
 	$i = rand(0, count($answer)-1);
 	$selectedAnswer = "$answer[$i]";
 	?>
 
-	<!-- Go to www.addthis.com/dashboard to customize your tools -->
-<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-4f5ce7c30be89bf7" async="async"></script>
-
-
 	<header id="top" class="header">
 		<div class="text-vertical-center">
-			<a href="/conch"><img src="img/conch.png" alt="image of sea shell (conch) emoji"></a>
+			<a href="/conch"><img src="img/conch.png" alt="The Magic Conch"></a>
 			<h1>Ask the Magic Conch</h1>
-				<br>
+			<br>
+			<?php
+
+			$success = false;
+			$errors = '';
+			if (!empty($_GET)) {
+
+				if (empty($_GET['question'])) $errors .= '<div class="error bottom">Please ask the magic conch a question.<br /></div>';
+				else $question = $_GET["question"];
 
 
-            <?php
+				if (empty($errors)) {
+					$success = true;
 
-						// If the form is being submitted
-            $success = false;
-            $errors = '';
-            if (!empty($_GET)) {
-
-            	if (empty($_GET['question'])) $errors .= '<div class="error bottom">Please ask the magic conch a question.<br /></div>';
-            	else $question = $_GET["question"];
-
-
-            	if (empty($errors)) {
-            		$success = true;
-
-            	}
+				}
 							// otherwise, display errors
-            	else {
-            		echo $errors;
-            	}
-            }
+				else {
+					echo $errors;
+				}
+			}
 
 
-						// If the form has been submitted, show a thank you message
-            if ($success == true) {
-            	?>
-            	<h2 class="question"><?php echo $question ?>?</h2>
-            	<br><h3 class="text-center"><?php echo  $selectedAnswer; ?></h3><br/>
+			if ($success == true) {
+				?>
+				<h2 class="question"><?php echo $question ?>?</h2>
+				<br><h3 class="text-center"><?php echo  $selectedAnswer; ?></h3><br/>
 
-            	<a href="/conch" class="btn btn-dark btn-lg">Ask a different question...</a>
+				<a href="/conch" class="btn btn-dark btn-lg">Ask a different question...</a>
 
-            	<?php
-            }
+				<?php
+			}
 						// Otherwise, show the form
-            else {
-            	?>
+			else {
+				?>
 
+				<div class="form__block">
+					<form method="get">
+						<input type="text" name="question" placeholder="Enter your question..."/>
 
+						<input type="submit" class="btn btn-dark btn-lg" value="Ask The Conch"/>
+					</form>
+				</div>
+				<?php
+			}	?>
+		</div>
+	</header>
 
-            	<div class="form__block">
-            		<form method="get">
-            			<input type="text" name="question" placeholder="Enter your question..."/>
-
-            			<input type="submit" class="btn btn-dark btn-lg" value="Ask The Conch"/>
-            		</form>
-            	</div>
-            	<?php
-            }	?>
-        </div>
-    </header>
-
-    <script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-
-  ga('create', 'UA-59785229-1', 'auto');
-  ga('send', 'pageview');
-
-</script>
+	<script>
+		(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+			m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+		})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+		ga('create', 'UA-59785229-1', 'auto');
+		ga('send', 'pageview');
+	</script>
 </body>
 </html>
