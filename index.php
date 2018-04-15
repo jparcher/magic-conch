@@ -17,6 +17,11 @@
 	<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
 	<meta name="msapplication-TileColor" content="#00aba9">
 	<meta name="theme-color" content="#ffffff">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@_itsjp">
+	<meta name="twitter:title" content="Got A Question? Ask The Magic Conch">
+	<meta name="twitter:description" content="Ever had a question that you just couldn't answer? Let the Magic Conch answer for you. Go on, ask it!">
+	<meta name="twitter:image" content="https://www.jparcher.xyz/conch/img/meta.png">
 </head>
 
 <body>
