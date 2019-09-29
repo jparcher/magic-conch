@@ -115,6 +115,10 @@
 				<?php
 			}	?>
 		</div>
+
+    <div class="r-block">
+    <iframe src="https://rcm-eu.amazon-adsystem.com/e/cm?o=2&p=26&l=ez&f=ifr&linkID=6b5f5a45df041a923c6bdae733d1dbeb&t=jparc00-21&tracking_id=jparc00-21" width="468" height="60" scrolling="no" border="0" marginwidth="0" style="border:none;" frameborder="0"></iframe>
+    </div>
 	</header>
 
 	<!-- Go to www.addthis.com/dashboard to customize your tools --> <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-58b73008995ae63b"></script>
