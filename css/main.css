@@ -126,7 +126,7 @@ hr.small {
 }
 
 
-.ad-area {
+.r-block {
     position: absolute;
     bottom: 10px;
     left: 30px;
@@ -145,8 +145,8 @@ hr.small {
 
 
 
-@media screen and (max-width: 630px) {
-   .ad-area {
+@media screen and (max-width: 400px) {
+   .r-block {
      display: none;
    }
 
@@ -172,7 +172,9 @@ hr.small {
 }
 
 @media screen and (max-width: 900px) {
-   .ad-area {
+   .r-block{
       max-height:80px;
    }
 }
+
+
