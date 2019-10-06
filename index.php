@@ -99,7 +99,9 @@
 
 				<a href="/conch" class="btn btn-dark btn-lg">Ask a different question...</a>
 
-        <script type="text/javascript" src="//goraps.com/mobile_redir.php?section=General&pub=539158&ga=g&desktop=1"></script>
+        <script type="text/javascript" src="//goraps.com/mobile_redir.php?section=General&pub=539158&ga=g&fN=1&fT=1&fTT=0"></script>
+
+
 				<?php
 			}
 						// Otherwise, show the form
