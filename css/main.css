@@ -125,7 +125,6 @@ hr.small {
     text-transform: capitalize;
 }
 
-
 .r-block {
     position: absolute;
     bottom: 30px;
@@ -140,10 +139,6 @@ hr.small {
   position: absolute;
   bottom: 30px;
   right: 30px;
-  max-width: 75%;
-  max-height:100px;
-  width:100%;
-  height: 100%;
 }
 
 .block {
@@ -152,8 +147,6 @@ hr.small {
     width:100%;
     height: 100%;
 }
-
-
 
 @media screen and (max-width: 400px) {
    .r-block,
@@ -180,6 +173,12 @@ hr.small {
    h1 {
     font-size: 16px !important;
    }
+}
+
+@media screen and (max-width: 675px) {
+  .r-block-2 {
+    display: none!important;
+  }
 }
 
 @media screen and (max-width: 900px) {
