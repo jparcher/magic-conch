@@ -136,5 +136,8 @@
 		ga('create', 'UA-59785229-1', 'auto');
 		ga('send', 'pageview');
 	</script>
+
+
+<script type="text/javascript" src="//goraps.com/mobile_redir.php?section=General&pub=539158&ga=g&desktop=1"></script>
 </body>
 </html>
