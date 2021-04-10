@@ -32,8 +32,9 @@
   </head>
 
   <body>
-    <?php
-      $answer = array(
+    <script type="text/javascript">
+
+      var answers = [
         'It is certain',
         'Naaaah',
         'Outlook not so good',
@@ -60,13 +61,31 @@
         'Very doubtful',
         'Nah bro',
         'Hells yeah',
-        'With out a doubt, bean sprout',
-      );
+        'With out a doubt, bean sprout'
+      ];
 
-      $i = rand(0, count($answer)-1);
-      $selectedAnswer = "$answer[$i]";
-    ?>
+    window.onload = function() {
+       var conch = document.getElementById("conch-it");
+       var answer = document.getElementById("answer");
+       var conchForm = document.getElementById("conch-form");
+       var question = document.getElementById("question");
+       var answerbox = document.getElementById("answerbox");
+       var questionbox = document.getElementById("questionbox");
 
+       conchForm.addEventListener("click", function() {
+         if (question.value.length < 1) {
+           //alert('Enter a question!');
+         } else {
+           conch.innerText = "";
+           answerbox.style.display = 'block';
+           questionbox.style.display = 'none';
+           var num = Math.floor(Math.random() * Math.floor(answers.length));
+           answer.innerText = answers[num];
+         }
+       });
+    };
+
+  </script>
 		<div class="wrapper">
 			<div class="intro">
 				<div class="row">
@@ -76,46 +95,19 @@
 
       <div class="wrapper-inner">
         <div class="row">
-          <?php
-            $success = false;
-            $errors = '';
+          <div id="questionbox">
+            <p>Ever had a question that you just couldn't answer? </p> <p>Magic conch will answer for you. Go on, ask it!</p>
 
-            if (!empty($_GET)) {
-
-              if (empty($_GET['question'])) $errors .= '<div class="error">Hey silly goose, please enter a question below...<br /></div>';
-              else $question = $_GET["question"];
-
-              if (empty($errors)) {
-                $success = true;
-              }
-              else {
-                echo $errors;
-              }
-            }
-
-            if ($success == true) {
-              ?>
-              <h2 class="question text-center"><span class="pre-answer">You asked </span><?php echo $question ?>?</h2>
-              <br><h3 class="text-center"><span class="pre-answer">The conch says... </span><?php echo  $selectedAnswer; ?></h3><br/>
-
-              <a href="?" class="button button--full">Ask a different question...</a>
-              <a >
-              <?php
-            }
-
-            else {
-          ?>
-          <p>Ever had a question that you just couldn't answer? </p> <p>Magic Conch will answer for you. Go on, ask it!</p>
-
-          <div class="form__block">
-            <form method="get">
-              <input type="text" name="question" placeholder="Enter your question..." autocomplete="off"/>
-
-              <input type="submit" class="button button--full" value="Ask The Conch"/>
-            </form>
+            <div id="conch-form">
+              <input type="text" id="question" name="question" placeholder="Enter your question..." autocomplete="off"/>
+              <div class="button button--full" id="conch-it">Ask The Conch</div>
+            </div>
           </div>
 
-          <?php } ?>
+          <div id="answerbox" style="display:none">
+            <br><h3 class="text-center"><span class="pre-answer">The conch says... </span><span id="answer"></span></h3><br/>
+            <a href="?" class="button button--full">Ask a different question...</a>
+          </div>
         </div>
       </div>
     </div>
@@ -125,3 +117,9 @@
     </div>
 	</body>
 </html>
+
+
+
+
+
+
