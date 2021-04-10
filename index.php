@@ -1,123 +1,127 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<meta name="description" content="Ever had a question that you just couldn't answer? Let the Magic Conch answer for you. Go on, ask it!">
-	<link rel="shortcut icon" href="img/favicon.ico">
-	<title>Got A Question? Ask The Magic Conch</title>
-	<link href="css/bootstrap.min.css" rel="stylesheet">
-	<link href="css/main.css" rel="stylesheet">
-	<link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
-	<link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
-	<link rel="manifest" href="img/site.webmanifest">
-	<link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#00aba9">
-	<meta name="theme-color" content="#ffffff">
-	<meta name="twitter:card" content="summary_large_image">
-	<meta name="twitter:site" content="@_itsjp">
-	<meta name="twitter:title" content="Got A Question? Ask The Magic Conch">
-	<meta name="twitter:description" content="Ever had a question that you just couldn't answer? Let the Magic Conch answer for you. Go on, ask it!">
-	<meta name="twitter:image" content="https://www.jparcher.xyz/conch/img/meta.png">
-</head>
-
-<body>
-	<script type="text/javascript">
-		if(top.location != window.location) {
-			window.location = 'https://www.jparcher.xyz/conch/error_iframe.php';
-		}
-	</script>
-
-	<?php
-	$answer = array(
-		'It is certain',
-		'Reply hazy try again',
-		'Conch says no',
-		'Outlook not so good',
-		'Without a doubt',
-		'Yes definitely',
-		'Nope',
-		'You may rely on it',
-		'As I see it, yes',
-		'Most likely',
-		'Outlook good',
-		'Yes',
-		'Signs point to yes',
-		'Ask again later',
-		'It is decidedly so',
-		'Possibly',
-		'Better not tell you now',
-		'Cannot predict now',
-		'Concentrate and ask again',
-		'Dont count on it',
-		'My reply is no',
-		'Outlook good',
-		'My sources say no',
-		'Could be',
-		'Very doubtful',
-		'Nah bro',
-		'Hells yeah',
-	);
-
-	$i = rand(0, count($answer)-1);
-	$selectedAnswer = "$answer[$i]";
-	?>
-
-	<header id="top" class="header">
-		<div class="text-vertical-center">
-			<a href="/conch"><img src="img/conch.png" alt="The Magic Conch"></a>
-			<h1>Ask the Magic Conch</h1>
-			<br>
-			<?php
-
-			$success = false;
-			$errors = '';
-			if (!empty($_GET)) {
-
-				if (empty($_GET['question'])) $errors .= '<div class="error bottom">Please ask the magic conch a question.<br /></div>';
-				else $question = $_GET["question"];
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Ever had a question that you just couldn't answer? Let the Magic Conch answer for you. Go on, ask it!">
+    <link rel="shortcut icon" href="img/favicon.ico">
+    <title>Got A Question? Ask The Magic Conch</title>
+    <link href="css/main.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700" rel="stylesheet" type="text/css">
+    <link rel="apple-touch-icon" sizes="152x152" href="img/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+    <link rel="manifest" href="img/site.webmanifest">
+    <link rel="mask-icon" href="img/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@_itsjp">
+    <meta name="twitter:title" content="Got A Question? Ask The Magic Conch">
+    <meta name="twitter:description" content="Ever had a question that you just couldn't answer? Let the Magic Conch answer for you. Go on, ask it!">
+    <meta name="twitter:image" content="https://www.jparcher.xyz/conch/img/meta.png">
 
 
-				if (empty($errors)) {
-					$success = true;
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css?family=Arvo:400,700&amp;display=swap" as="style">
 
-				}
-							// otherwise, display errors
-				else {
-					echo $errors;
-				}
-			}
+    <link rel="stylesheet" href="/css/app.css">
+    <link href="https://fonts.googleapis.com/css?family=Arvo:400,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arvo:400,700&amp;display=swap" onload="this.onload=null;this.removeAttribute('media');">
+  </head>
 
+  <body>
+    <?php
+      $answer = array(
+        'It is certain',
+        'Naaaah',
+        'Outlook not so good',
+        'Without a doubt',
+        'Yes definitely',
+        'Nope',
+        'You may rely on it',
+        'As I see it, yes',
+        'Most likely',
+        'Outlook good',
+        'Yes',
+        'Signs point to yes',
+        'Ask again later',
+        'It is decidedly so',
+        'Possibly',
+        'Better not tell you now',
+        'Cannot predict now',
+        'Concentrate and ask again',
+        'Dont count on it',
+        'My reply is no',
+        'Outlook good',
+        'My sources say no',
+        'Could be',
+        'Very doubtful',
+        'Nah bro',
+        'Hells yeah',
+        'With out a doubt, bean sprout',
+      );
 
-			if ($success == true) {
-				?>
-				<h2 class="question"><?php echo $question ?>?</h2>
-				<br><h3 class="text-center"><?php echo  $selectedAnswer; ?></h3><br/>
+      $i = rand(0, count($answer)-1);
+      $selectedAnswer = "$answer[$i]";
+    ?>
 
-				<a href="/conch" class="btn btn-dark btn-lg">Ask a different question...</a>
-
-        <script type="text/javascript" src="//goraps.com/mobile_redir.php?section=General&pub=539158&ga=g&fN=1&fT=1&fTT=0"></script>
-
-
-				<?php
-			}
-						// Otherwise, show the form
-			else {
-				?>
-
-				<div class="form__block">
-					<form method="get">
-						<input type="text" name="question" placeholder="Enter your question..."/>
-
-						<input type="submit" class="btn btn-dark btn-lg" value="Ask The Conch"/>
-					</form>
+		<div class="wrapper">
+			<div class="intro">
+				<div class="row">
+				  <h1>Ask the Magic Conch</h1>
 				</div>
-				<?php
-			}	?>
-		</div>
-	</header>
-</body>
+			</div>
+
+      <div class="wrapper-inner">
+        <div class="row">
+          <?php
+            $success = false;
+            $errors = '';
+
+            if (!empty($_GET)) {
+
+              if (empty($_GET['question'])) $errors .= '<div class="error">Hey silly goose, please enter a question below...<br /></div>';
+              else $question = $_GET["question"];
+
+              if (empty($errors)) {
+                $success = true;
+              }
+              else {
+                echo $errors;
+              }
+            }
+
+            if ($success == true) {
+              ?>
+              <h2 class="question text-center"><span class="pre-answer">You asked </span><?php echo $question ?>?</h2>
+              <br><h3 class="text-center"><span class="pre-answer">The conch says... </span><?php echo  $selectedAnswer; ?></h3><br/>
+
+              <a href="?" class="button button--full">Ask a different question...</a>
+              <a >
+              <?php
+            }
+
+            else {
+          ?>
+          <p>Ever had a question that you just couldn't answer? </p> <p>Magic Conch will answer for you. Go on, ask it!</p>
+
+          <div class="form__block">
+            <form method="get">
+              <input type="text" name="question" placeholder="Enter your question..." autocomplete="off"/>
+
+              <input type="submit" class="button button--full" value="Ask The Conch"/>
+            </form>
+          </div>
+
+          <?php } ?>
+        </div>
+      </div>
+    </div>
+
+    <div class="conch">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36"><path fill="#CCD6DD" d="M29.049 7.033c-.07-.07-.141-.126-.211-.188-1.08-1.087-2.497-1.564-4.008-1.373l-3.812.483c-.382-3.003-2.25-4.446-4.351-4.181l-4.24.536C12.075.767 11.011.034 9.827.185L5.033.79C3.71.958 2.773 2.438 2.94 4.097l.606 6.007c.152 1.501 1.425 2.591 2.403 2.693l.514 5.093c.258 2.553 2.509 4.365 4.117 4.38l.498 4.926c.164 1.622.928 3.027 1.917 4.063.23.339.471.656.737.922 4.423 4.423 12.183 5.064 16.607.64 4.42-4.422 3.133-21.365-1.29-25.788z"/><path fill="#66757F" d="M30.609 14.396c.801 2.371 1.545 11.57-1.532 15.543-3.079 3.972-8.043-1.389-5.312-6.205 2.73-4.814 6.036-11.733 6.844-9.338z"/><path fill="#99AAB5" d="M21.018 5.954c.009.072.028.133.036.206.318 3.154-7.686 15.799-10.204 16.119-.085.011-.181-.008-.271-.008l.401 3.971c3.694-1.936 12.412-15.71 13.087-20.673l-3.049.385zm-8.59-3.645c.042.182.079.369.1.574.197 1.942-4.732 9.725-6.28 9.923-.094.012-.196.001-.299-.009l.353 3.502c2.78-2.096 8.093-10.489 9.094-14.365l-2.968.375z"/></svg>
+    </div>
+	</body>
 </html>
