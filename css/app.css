@@ -34,6 +34,7 @@ body {
 }
 
 .conch {
+  display: none;
   position: absolute;
   bottom: 40px;
   right: -20px;
@@ -150,6 +151,10 @@ input {
   .button {
     font-size: 1.5rem;
     margin-bottom: 1rem;
+  }
+
+  .conch {
+    display: block;
   }
 }
 
