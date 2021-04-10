@@ -136,15 +136,10 @@ input {
 
 /* -- SM --*/
 @media (min-width: 37.5em) {
-  html,
-  body {
-    min-height: 100vh;
-  }
-
   .wrapper-inner { width: 70%; }
 
   h1 {
-    font-size: 4rem;
+    font-size: 3rem;
     padding-bottom: 25px;
   }
 
